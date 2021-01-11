@@ -1,6 +1,6 @@
 # ABOUT THIS PROJECT
 ##### Learn:
-Why Python programming is awesome
+Why Python programming is awesome <br>
 Who created Python
 Who is Guido van Rossum
 Where does the name ‘Python’ come from
