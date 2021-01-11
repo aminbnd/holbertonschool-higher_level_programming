@@ -1,12 +1,12 @@
 # ABOUT THIS PROJECT
 ##### Learn:
 Why Python programming is awesome <br>
-Who created Python \s\s
-Who is Guido van Rossum
-Where does the name ‘Python’ come from
-What is the Zen of Python
-How to use the Python interpreter
-How to print text and variables using print
-How to use strings
-What are indexing and slicing in Python
-What is the official Holberton Python coding style and how to check your code with PEP 8
+Who created Python <br>
+Who is Guido van Rossum <br>
+Where does the name ‘Python’ come from <br>
+What is the Zen of Python <br>
+How to use the Python interpreter <br>
+How to print text and variables using print <br>
+How to use strings <br>
+What are indexing and slicing in Python <br>
+What is the official Holberton Python coding style and how to check your code with PEP 8 <br>
