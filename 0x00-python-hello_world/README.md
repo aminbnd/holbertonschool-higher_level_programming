@@ -1,6 +1,5 @@
 # ABOUT THIS PROJECT
 #### Learn:
-<br\>
 Why Python programming is awesome
 Who created Python
 Who is Guido van Rossum
