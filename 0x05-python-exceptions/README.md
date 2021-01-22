@@ -8,4 +8,3 @@ How to correctly handle an exception, <br>
 What’s the purpose of catching exceptions, <br>
 How to raise a builtin exception, and <br>
 When do we need to implement a clean-up action after an exception <br>
-Just for trying
