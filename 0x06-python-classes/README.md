@@ -19,5 +19,5 @@ How to dynamically create arbitrary new attributes for existing instances of a c
 How to bind attributes to object and classes <br>
 What is the __dict__ of a class and/or instance of a class and what does it contain <br>
 How does Python find the attributes of an object or class <br>
-How to use the getattr function
+How to use the getattr function <br>
 <img src="https://www.holbertonschool.com/holberton-logo.png"/>
