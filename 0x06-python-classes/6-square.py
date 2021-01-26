@@ -6,7 +6,8 @@ class Square:
     """Square class
     Attributes: size (int): size of the squre """
     def __init__(self, size=0, position=(0, 0)):
-        """size initialization"""
+        """size initialization
+        position initialization"""
         self.__size = size
         self.position = position
 
@@ -34,21 +35,22 @@ class Square:
         if self.size == 0:
             print("")
         else:
+            print("\n" * self.__position[1], end="")
             for i in range(self.size):
+                print(" " * self.__position[0], end="")
                 print("#" * self.size)
 
     @property
     def position(self):
-        """Retrieve the position"""
+        """ Retrieve """
         return self.position
 
     @position.setter
     def position(self, value):
-        """Set the position"""
-        if type(value) is not tuple or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if type(value[0]) is not int or value[0] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if type(value[1]) is not int or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        """ set the position """
+        if type(value) == tuple and len(value) == 2 and \
+           type(value[0]) is int and value[0] >= 0 and \
+           type(value[1]) is int and value[1] >= 0:
+            self.__position = value
+        else:
+            raise("position must be a tuple of 2 positive integers")
