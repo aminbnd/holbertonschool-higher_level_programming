@@ -36,14 +36,14 @@ class Square:
             print("")
         else:
             print("\n" * self.__position[1], end="")
-            for i in range(0, self.size):
+            for i in range(self.size):
                 print(" " * self.__position[0], end="")
                 print("#" * self.__size)
 
     @property
     def position(self):
         """ Retrieve """
-        return self.position
+        return self.__position
 
     @position.setter
     def position(self, value):
