@@ -1,9 +1,9 @@
 # PYTHON CALSSES AND OBJECTS
 ## Learn:
-* Why Python programming is awesome <br>
+* Why Python programming is awesome <br\>
 * What is OOP <br>
 * “first-class everything” <br>
-* What is a class <br>
+    What is a class <br>
 * What is an object and an instance <br>
 * What is the difference between a class and an object or instance <br>
 * What is an attribute <br>
