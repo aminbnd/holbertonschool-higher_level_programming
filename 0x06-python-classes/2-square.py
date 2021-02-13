@@ -4,7 +4,7 @@
 
 class Square:
     """Square class
-    Attributes: size (int): size of the squre """
+    Attributes: size (int): size of the square """
     def __init__(self, size=0):
         """size initialization"""
         if type(size) != int:
