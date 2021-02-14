@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Definition of a function returning the sum of two integers"""
 
+
 def add_integer(a, b=98):
     """ Returns a + b
     Raises:
