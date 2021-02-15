@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """ Defining a class: Rectangle """
 
+
 class Rectangle:
     """ Rectangle: class
-    
+
     Attributes:
         width (int): Private attribute
         height (int): Private attribute
@@ -15,14 +16,14 @@ class Rectangle:
             width (int): The rectable width
             height (int): The rectangle height
         """
-        self.__height = height
-        self.__width = width
-    
+        self.height = height
+        self.width = width
+
     @property
     def width(self):
         """ Retrieve width """
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """ Set the width value """
@@ -31,12 +32,12 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-    
+
     @property
     def height(self):
         """ Retrieve height value """
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """ Set the height value """
@@ -45,4 +46,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-    
