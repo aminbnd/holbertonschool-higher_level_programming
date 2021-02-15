@@ -75,10 +75,9 @@ class Rectangle:
         return (("#"*self.__width + "\n")*self.height)[:-1]
 
     def __repr__(self):
-        """
-        Provides the rectangle representation
+        """ Provides representation of the rectangle
 
         Return:
             The representation of the rectangle (str)
         """
-        return "Rectangle ({}, {})".format(self.__width, self.__height)
+        return ('Rectangle({}, {})'.format(self.__width, self.__height))
