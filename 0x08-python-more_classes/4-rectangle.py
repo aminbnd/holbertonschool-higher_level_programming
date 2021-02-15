@@ -81,4 +81,4 @@ class Rectangle:
         Return:
             The representation of the rectangle (str)
         """
-        return ("Rectangle ({},{})".format(self.__width, self.__height))
+        return ("Rectangle ({},{})".format(self.__height, self.__width))
