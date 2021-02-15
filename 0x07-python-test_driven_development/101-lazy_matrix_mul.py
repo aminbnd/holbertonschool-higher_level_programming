@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """
 Lazy matrix multiplication
- multiply two matrices 
+multiply two matrices
 
  """
 
 
 import numpy as n
+
 
 def lazy_matrix_mul(m_a, m_b):
     """
