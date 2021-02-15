@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """ Defining a class: Rectangle """
 
 
@@ -72,5 +71,4 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return ("#"*self.__width + "\n")*self.height
-
+        return (("#"*self.__width + "\n")*self.height)[:-1]
