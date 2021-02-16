@@ -13,6 +13,6 @@ def is_kind_of_class(obj, a_class):
                 from, the specified class
             False otherwise
     """
-    if isinstance(obj, a_class):
-        return True
-    return False
+    if not isinstance(obj, a_class):
+        return False
+    return True
