@@ -4,7 +4,7 @@
 
 def is_same_class(obj, a_class):
     """ is_same_class : function
-    
+
     Args:
         obj (objecy): object to be tested
         a_class: To be checked
