@@ -4,7 +4,6 @@
 
 class BaseGeometry:
     """ Class: BaseGeometry empty class """
-    pass
 
     def area(self):
         """ area: Public instance method """
