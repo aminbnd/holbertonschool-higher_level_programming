@@ -56,30 +56,30 @@ Tests for too many arguments given:
 Tests for value == 0:
     >>> bg.integer_validator("Integer", 0)
     Traceback (most recent call last):
-    ValueError: {} must be greater than 0
+    ValueError: Integer must be greater than 0
 
 Tests for value < 0:
     >>> bg.integer_validator("Integer", -1)
     Traceback (most recent call last):
-    ValueError: {} must be greater than 0
+    ValueError: Integer must be greater than 0
 
 Test for non integer value:
     >>> bg.integer_validator("Name", 1.1)
     Traceback (most recent call last):
-    TypeError: {} must be an integer
+    TypeError: Name must be an integer
 
     >>> bg.integer_validator("Name", 'Nooo')
     Traceback (most recent call last):
-    TypeError: {} must be an integer
+    TypeError: Name must be an integer
 
     >>> bg.integer_validator("Name", 'True')
     Traceback (most recent call last):
-    TypeError: {} must be an integer
+    TypeError: Name must be an integer
 
     >>> bg.integer_validator("Name", (1, 2))
     Traceback (most recent call last):
-    TypeError: {} must be an integer
+    TypeError: Name must be an integer
 
     >>> bg.integer_validator("Name", [1, 2])
     Traceback (most recent call last):
-    TypeError: {} must be an integer
+    TypeError: Name must be an integer
