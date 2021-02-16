@@ -1,0 +1,85 @@
+Module ``7-base_geometry``
+====================================
+
+Tests for importing the function from module:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Tests for module docstring:
+    >>> mod = __import__('7-base_geometry').__doc__
+    >>> len(mod) > 1
+    True
+
+Tests for class docstring:
+    >>> cls = __import__('7-base_geometry').BaseGeometry.__doc__
+    >>> len(cls) > 1
+    True
+
+Tests for method docstring:
+    >>> met1 = __import__('7-base_geometry').BaseGeometry.area.__doc__
+    >>> len(met1) > 1
+    True
+    >>> met2 = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+    >>> len(met2) > 1
+    True
+
+Tests for erea implentation failure:
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+Tests for too many arguments for area:
+    >>> bg.area(1)
+    Traceback (most recent call last):
+    TypeError: area() takes 1 positional argument but 2 were given
+
+Tests integer validator for normal use:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Integer", 1)
+
+Tests for no arguments:
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Tests for one argument given:
+    >>> bg.integer_validator("Name")
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Tests for too many arguments given:
+    >>> bg.integer_validator("name", 1, 2)
+    Traceback (most recent call last):
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Tests for value == 0:
+    >>> bg.integer_validator("Integer", 0)
+    Traceback (most recent call last):
+    ValueError: {} must be greater than 0
+
+Tests for value < 0:
+    >>> bg.integer_validator("Integer", -1)
+    Traceback (most recent call last):
+    ValueError: {} must be greater than 0
+
+Test for non integer value:
+    >>> bg.integer_validator("Name", 1.1)
+    Traceback (most recent call last):
+    TypeError: {} must be an integer
+
+    >>> bg.integer_validator("Name", 'Nooo')
+    Traceback (most recent call last):
+    TypeError: {} must be an integer
+
+    >>> bg.integer_validator("Name", 'True')
+    Traceback (most recent call last):
+    TypeError: {} must be an integer
+
+    >>> bg.integer_validator("Name", (1, 2))
+    Traceback (most recent call last):
+    TypeError: {} must be an integer
+
+    >>> bg.integer_validator("Name", [1, 2])
+    Traceback (most recent call last):
+    TypeError: {} must be an integer
