@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let myVar = process.argv[2];
+const myVar = process.argv[2];
 if (isNaN(myVar) === true) {
   console.log('Missing number of occurrences');
 } else {
