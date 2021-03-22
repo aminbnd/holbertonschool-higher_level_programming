@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
 function factorial (n) {
-  let result = 1;
-  for (let i = 1; i <= n; i++) {
-    result *= i;
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
   }
-  return result;
 }
 console.log(factorial(parseInt(process.argv[2])));
