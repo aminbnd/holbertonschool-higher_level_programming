@@ -2,10 +2,9 @@
 
 let i = 0;
 process.argv.forEach((val, index) => {
-  console.log(`${val}`);
-  i++;
+	i++;
 });
-if (i <= 2) {
+if (i < 3) {
   console.log('No argument');
 } else if (i === 3) {
   console.log('Argument found');
