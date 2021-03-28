@@ -17,7 +17,7 @@ if __name__ == "__main__":
     cur = cnx.cursor()
     sta = sys.argv[4]
     cur.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
-                .format(sta))
+                ,(sta,))
     rows = cur.fetchall()
     for i in rows:
         if i[1] == sys.argv[4]:
