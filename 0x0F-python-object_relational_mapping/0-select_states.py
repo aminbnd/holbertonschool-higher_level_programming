@@ -7,7 +7,7 @@ import MySQLdb
 
 
 def main():
-    conn = MySQLdb.connect(
+    con = MySQLdb.connect(
                         host="localhost",
                         port=3306,
                         user=sys.argv[1],
@@ -15,13 +15,13 @@ def main():
                         db=sys.argv[3],
                         charset="utf8"
                             )
-    cur = conn.cursor()
+    cur = con.cursor()
     query = "SELECT id,name FROM states ORDER BY id ASC"
     cur.execute(query)
     row = cur.fetchall()
     for i in row:
         print(i)
     cur.close()
-    conn.close()
+    con.close()
 if __name__ == "__main__":
     main()
