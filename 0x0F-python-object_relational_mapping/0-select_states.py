@@ -1,27 +1,27 @@
 #!/usr/bin/python3
 """
-Module that lists states
+Script that lists all `states` from the database `hbtn_0e_0_usa`.
+
+Arguments:
+    mysql username (str)
+    mysql password (str)
+    database name (str)
 """
+
 import sys
 import MySQLdb
 
-
-def main():
-    con = MySQLdb.connect(
-                        host="localhost",
-                        port=3306,
-                        user=sys.argv[1],
-                        passwd=sys.argv[2],
-                        db=sys.argv[3],
-                        charset="utf8"
-                            )
-    cur = con.cursor()
-    query = "SELECT id,name FROM states ORDER BY id ASC"
-    cur.execute(query)
-    row = cur.fetchall()
-    for i in row:
-        print(i)
-    cur.close()
-    con.close()
 if __name__ == "__main__":
-    main()
+    mySQL_u = sys.argv[1]
+    mySQL_p = sys.argv[2]
+    db_name = sys.argv[3]
+
+    # By default, it will connect to localhost:3306
+    db = MySQLdb.connect(user=mySQL_u, passwd=mySQL_p, db=db_name)
+    cur = db.cursor()
+
+    cur.execute("SELECT * FROM states ORDER BY id")
+    rows = cur.fetchall()
+
+    for row in rows:
+        print(row)

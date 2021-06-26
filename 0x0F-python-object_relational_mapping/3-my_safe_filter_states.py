@@ -1,26 +1,32 @@
 #!/usr/bin/python3
 """
-Module that displays all values in the states
-table where name matches the argument
-safe from SQL injection
-"""
+Script that lists all values in the `states` table of `hbtn_0e_0_usa`
+where `name` matches the argument `state name searched`.
 
+Arguments:
+    mysql username (str)
+    mysql password (str)
+    database name (str)
+    state name searched (str)
+"""
 
 import sys
 import MySQLdb
 
-
 if __name__ == "__main__":
-    cnx = MySQLdb.connect(host="localhost", port=3306,
-                          user=sys.argv[1], passwd=sys.argv[2],
-                          db=sys.argv[3], charset="utf8")
-    cur = cnx.cursor()
-    sta = sys.argv[4]
-    cur.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC",
-                (sta,))
+    mySQL_u = sys.argv[1]
+    mySQL_p = sys.argv[2]
+    db_name = sys.argv[3]
+
+    searched_name = sys.argv[4]
+
+    # By default, it will connect to localhost:3306
+    db = MySQLdb.connect(user=mySQL_u, passwd=mySQL_p, db=db_name)
+    cur = db.cursor()
+
+    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id",
+                (searched_name, ))
     rows = cur.fetchall()
-    for i in rows:
-        if i[1] == sys.argv[4]:
-            print(i)
-    cur.close()
-    cnx.close()
+
+    for row in rows:
+        print(row)
