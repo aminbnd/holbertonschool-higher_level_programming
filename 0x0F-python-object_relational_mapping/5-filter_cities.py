@@ -1,20 +1,35 @@
 #!/usr/bin/python3
 """
-Module that lists cities of the states
+Script that lists all `cities` in the `cities` table of `hbtn_0e_4_usa`
+where the city's state matches the argument `state name`.
+
+Arguments:
+    mysql username (str)
+    mysql password (str)
+    database name (str)
+    state name (str)
 """
+
 import sys
 import MySQLdb
 
-
 if __name__ == "__main__":
-    cnx = MySQLdb.connect(host="localhost", port=3306,
-                          user=sys.argv[1], passwd=sys.argv[2],
-                          db=sys.argv[3], charset="utf8")
-    cur = cnx.cursor()
-    cur.execute("SELECT cities.name FROM cities JOIN states ON \
-                cities.state_id = states.id WHERE states.name \
-                LIKE %s ORDER BY cities.id ASC", (sys.argv[4],))
+    mySQL_u = sys.argv[1]
+    mySQL_p = sys.argv[2]
+    db_name = sys.argv[3]
+
+    state_name = sys.argv[4]
+
+    # By default, it will connect to localhost:3306
+    db = MySQLdb.connect(user=mySQL_u, passwd=mySQL_p, db=db_name)
+    cur = db.cursor()
+
+    cur.execute("SELECT c.name \
+                 FROM cities c INNER JOIN states s \
+                 ON c.state_id = s.id WHERE s.name = %s\
+                 ORDER BY c.id", (state_name, ))
     rows = cur.fetchall()
-    print(", ".join(city[0] for city in rows))
-    cur.close()
-    cnx.close()
+
+    for i in range(len(rows)):
+        print(rows[i][0], end=", " if i + 1 < len(rows) else "")
+    print("")
